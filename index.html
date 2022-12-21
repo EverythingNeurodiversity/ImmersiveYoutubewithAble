@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Ableplayer Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/ableplayer@latest/build/ableplayer.min.js"></script>
+    <style>
+      .able-window {
+        display: flex;
+      }
+      .able-window .able-transcript {
+        width: 30%;
+      }
+      .able-window .able-video {
+        width: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="able-window">
+      <iframe src="https://www.youtube.com/embed/EQ3GjpGq5Y8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="able-transcript"></div>
+    </div>
+    <script>
+      const player = new AblePlayer(document.querySelector('iframe'), {
+        transcriptType: 'external',
+        transcriptSrc: 'https://example.com/transcript.vtt',
+        transcriptTitle: 'Transcript',
+        transcriptDivLocation: 'above',
+      });
+    </script>
+  </body>
+</html>
